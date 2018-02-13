@@ -1,0 +1,10 @@
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\bin\Release\Utilities.dll
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\bin\Release\Utilities.pdb
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\obj\Release\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\obj\Release\Utilities.dll
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\obj\Release\Utilities.pdb
+C:\Users\kmfh146\Desktop\SFTPDownload\Utilities\bin\Release\Utilities.dll
+C:\Users\kmfh146\Desktop\SFTPDownload\Utilities\bin\Release\Utilities.pdb
+C:\Users\kmfh146\Desktop\SFTPDownload\Utilities\obj\Release\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\kmfh146\Desktop\SFTPDownload\Utilities\obj\Release\Utilities.dll
+C:\Users\kmfh146\Desktop\SFTPDownload\Utilities\obj\Release\Utilities.pdb

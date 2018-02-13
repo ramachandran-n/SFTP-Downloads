@@ -1,0 +1,10 @@
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\bin\Debug\Utilities.dll
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\bin\Debug\Utilities.pdb
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\obj\Debug\Utilities.dll
+C:\Users\kmfh146\Documents\Visual Studio 2013\Projects\SFTPDownload\Utilities\obj\Debug\Utilities.pdb
+C:\Users\kmfh146\Source\Repos\SFTP-Downloads\SFTPDownload\Utilities\bin\Debug\Utilities.dll
+C:\Users\kmfh146\Source\Repos\SFTP-Downloads\SFTPDownload\Utilities\bin\Debug\Utilities.pdb
+C:\Users\kmfh146\Source\Repos\SFTP-Downloads\SFTPDownload\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\kmfh146\Source\Repos\SFTP-Downloads\SFTPDownload\Utilities\obj\Debug\Utilities.dll
+C:\Users\kmfh146\Source\Repos\SFTP-Downloads\SFTPDownload\Utilities\obj\Debug\Utilities.pdb
