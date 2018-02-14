@@ -9,21 +9,36 @@ using System.Threading.Tasks;
 
 namespace Utilities
 {
+    /// <summary>
+    /// Created by Ramachandran Narayanan
+    /// This class is used for mailing the status and drafting the mail message
+    /// </summary>
     public static class Mailer
     {
         static string[] _region = new string[] { "your region array goes here" };
 
         /// <summary>
         /// Created by Ramachandran Narayanan
-        /// This method is used to send the status update
+        /// This method is used to send the Status Mail
         /// </summary>
         public static void SendStatus()
         {
             MailMessage _mailMessage = new MailMessage();
 
-            MailAddress _from = new MailAddress(ConfigurationManager.AppSettings["FromAddress"].ToString());
-            _mailMessage.From = _from;
-            _mailMessage.To.Add(ConfigurationManager.AppSettings["ToAddress"]);
+            if (ConfigurationManager.AppSettings["FromAddress"].ToString() != "" && ConfigurationManager.AppSettings["FromAddress"].ToString() != null)
+            {
+                MailAddress _from = new MailAddress(ConfigurationManager.AppSettings["FromAddress"].ToString());
+                _mailMessage.From = _from;
+            }
+            if (ConfigurationManager.AppSettings["ToAddress"].ToString() != "" && ConfigurationManager.AppSettings["ToAddress"].ToString() != null)
+            {
+                _mailMessage.To.Add(ConfigurationManager.AppSettings["ToAddress"]);
+            }
+            if(ConfigurationManager.AppSettings["CCAddress"] != ""  && ConfigurationManager.AppSettings["CCAddress"].ToString() != null)
+            {
+                MailAddress _cc = new MailAddress(ConfigurationManager.AppSettings["CCAddress"]);
+                _mailMessage.CC.Add(_cc);
+            }
             _mailMessage.Subject = "Daily Monitoring - " + DateTime.Now.ToString("dd-MMM-yyyy");
             _mailMessage.Body = GetHtmlFrame(GetMessageContent());
             _mailMessage.IsBodyHtml = true;
@@ -35,11 +50,11 @@ namespace Utilities
 
         /// <summary>
         /// Created by Ramachandran Narayanan
-        /// This method is used to get the count list of file names
+        /// This method is used to get the file names for the day 
         /// </summary>
         /// <param name="region"></param>
         /// <returns></returns>
-        private static List<string> GetCount(string region)
+        private static List<string> GetFileNames(string region)
         {
             string _downloadPath = Path.Combine(ConfigurationManager.AppSettings["SharedDownloadBox"].ToString(), DateTime.Now.ToString("dd-MM-yyyy"));
             DirectoryInfo _directoryInfo = new DirectoryInfo(_downloadPath);
@@ -50,7 +65,7 @@ namespace Utilities
 
         /// <summary>
         /// Created by Ramachandran Narayanan
-        /// This method is used to form the message content of the mail
+        /// This method is used to form the mail body
         /// </summary>
         /// <returns></returns>
         private static StringBuilder GetMessageContent()
@@ -64,7 +79,7 @@ namespace Utilities
             foreach(string _reg in _region)
             {
                 _sbuilder.Append("<tr>");
-                var _fileList = GetCount(_reg);
+                var _fileList = GetFileNames(_reg);
                 _sbuilder.Append("<td rowspan=" + (_fileList.Count + 1) +">" + _reg + "</td>");
                 _sbuilder.Append("<td rowspan=" + (_fileList.Count + 1) + ">" + _fileList.Count + "</td>");
                 if (_fileList!=null && _fileList.Count > 0)
@@ -81,13 +96,15 @@ namespace Utilities
                 _sbuilder.Append("</tr>");
             }
             _sbuilder.Append("</tbody></table>");
+            _sbuilder.Append("<p>");
+            _sbuilder.Append("<p>");
+            _sbuilder.Append("<p>Thanks, <br> FIND Support Team.");
             return _sbuilder;
         }
 
-
         /// <summary>
         /// Created by Ramachandran Narayanan
-        /// This forms as a base of the HTML document generation
+        /// This method is used to form the HTML frame of the mail
         /// </summary>
         /// <param name="_mainContent"></param>
         /// <returns></returns>
